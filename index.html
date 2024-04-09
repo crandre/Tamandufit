@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
- <style>
- body {
- background-color: #ddd;
- font-family: Arial, sans-serif;
- }
+<style>
+body {
+background-color: #ddd;
+font-family: Arial, sans-serif;
+}
+h1 {
+color: green;
+text-align: center;
+padding: 20px;
+}
 
- h1 {
- color: green;
- text-align: center;
- padding: 20px;
- }
+form {
+width: 300px;
+margin: 0 auto;
+}
 
- form {
- width: 300px;
- margin: 0 auto;
- }
+label {
+display: block;
+margin-bottom: 10px;
+}
 
- label {
- display: block;
- margin-bottom: 10px;
- }
+input[type="checkbox"] {
+display: none;
+}
 
- input[type="checkbox"] {
- display: none;
- }
+label:before {
+content: "";
+display: inline-block;
+width: 20px;
+height: 20px;
+margin-right: 10px;
+background-color: #eee;
+border: 1px solid black;
+vertical-align: middle;
+}
 
- label:before {
- content: "";
- display: inline-block;
- width: 20px;
- height: 20px;
- margin-right: 10px;
- background-color: #eee;
- border: 1px solid black;
- vertical-align: middle;
- }
+input[type="checkbox"]:checked + label:before {
+content: "✔";
+font-size: 18px;
+text-align: center;
+line-height: 20px;
+}
 
- input[type="checkbox"]:checked + label:before {
- content: "✔";
- font-size: 18px;
- text-align: center;
- line-height: 20px;
- }
+input[type="submit"] {
+background-color: green;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+margin-top: 20px;
+}
+</style>
 
- input[type="submit"] {
- background-color: green;
- color: white;
- border: none;
- padding: 10px 20px;
- cursor: pointer;
- margin-top: 20px;
- }
- </style>
 </head>
 <body>
- <h1>Muscle Checkbox Form</h1>
- <form action="checkbox.php" method="post">
- <label for="chest">Chest</label>
- <input type="checkbox" id="chest" name="muscles[]" value="chest">
- <br>
- <label for="back">Back</label>
- <input type="checkbox" id="back" name="muscles[]" value="back">
- <br>
- <label for="shoulders">Shoulders</label>
- <input type="checkbox" id="shoulders" name="muscles[]" value="shoulders">
- <br>
- <label for="biceps">Biceps</label>
- <input type="checkbox" id="biceps" name="muscles[]" value="biceps">
- <br>
- <label for="triceps">Triceps</label>
- <input type="checkbox" id="triceps" name="muscles[]" value="triceps">
- <br>
- <label for="abs">Abs</label>
- <input type="checkbox" id="abs" name="muscles[]" value="abs">
- <br>
- <label for="legs">Legs</label>
- <input type="checkbox" id="legs" name="muscles[]" value="legs">
- <br>
- <input type="submit" value="Submit">
- </form>
+<h1>Muscle Checkbox Form</h1>
+<form action="checkbox.php" method="post">
+<label for="chest">Chest</label>
+<input type="checkbox" id="chest" name="muscles[]" value="chest">
+<br>
+<label for="back">Back</label>
+<input type="checkbox" id="back" name="muscles[]" value="back">
+<br>
+<label for="shoulders">Shoulders</label>
+<input type="checkbox" id="shoulders" name="muscles[]" value="shoulders">
+<br>
+<label for="biceps">Biceps</label>
+<input type="checkbox" id="biceps" name="muscles[]" value="biceps">
+<br>
+<label for="triceps">Triceps</label>
+<input type="checkbox" id="triceps" name="muscles[]" value="triceps">
+<br>
+<label for="abs">Abs</label>
+<input type="checkbox" id="abs" name="muscles[]" value="abs">
+<br>
+<label for="legs">Legs</label>
+<input type="checkbox" id="legs" name="muscles[]" value="legs">
+<br>
+<input type="submit" value="Submit">
+</form>
 </body>
 </html>
