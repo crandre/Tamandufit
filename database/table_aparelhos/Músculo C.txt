@@ -1,0 +1,1 @@
+Aparelho A|Aparelho B|Aparelho C|Aparelho D|Aparelho E
