@@ -7,13 +7,47 @@
 
     $email = rastrear_token($token);
 
-    if ($email == "naoencontrado") header('Location: index.php'); 
+    if ($email == "naoencontrado") echo "<script>location.href = '/index.php';</script>";
 
     $nome = get("table_user",0,$email,1);
 
 
 ?>
+<?php
 
+    function subtrair_quantidade($aparelho){
+        
+
+        $quantidade_disponivel = capturar_aparelhos_disponiveis($aparelho)+1;
+        $quantidade_total = capturar_aparelhos_totais($aparelho);
+        $url_foto = capturar_fotos_aparelhos($aparelho);
+    
+        $string = $quantidade_disponivel."|".$quantidade_total."|".$url_foto;
+
+        if ($quantidade_disponivel<=$quantidade_total) atualizar_dado("table_estatistica",$aparelho,$string);
+    
+    }
+    
+    function adicionar_quantidade($aparelho){
+        
+
+        $quantidade_disponivel = capturar_aparelhos_disponiveis($aparelho)-1;
+        $quantidade_total = capturar_aparelhos_totais($aparelho);
+        $url_foto = capturar_fotos_aparelhos($aparelho);
+    
+        $string = $quantidade_disponivel."|".$quantidade_total."|".$url_foto;
+
+    
+        atualizar_dado("table_estatistica",$aparelho,$string);
+    
+    }
+    
+    
+
+    $aparelho = str_replace("'","",$_GET['aparelho']);
+    if ($aparelho!="") subtrair_quantidade($aparelho);
+    
+?>
 <?php
 
     function parte_inicial() {
@@ -22,9 +56,10 @@
         <!DOCTYPE html>
         <html>
         <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
         body {
-        background-color: #ddd;
+        background-color: #44bc62;
         font-family: Arial, sans-serif;
         }
         h1 {
@@ -82,9 +117,9 @@
     function parte_texto($nome) {
 
         $string = '
-        <body>
-        <h1>Tamandufit</h1>
-        <h2>Olá, '.$nome.', escolha o grupo muscular que você irá treinar hoje.</h2>';
+        <body><br><br><br>
+              <img style="width:90px; height: 90px; border-radius: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute" src="logo.png"></img><br>
+        <h2  style="color: #FFFFFF"><b>Olá, '.$nome.', escolha o grupo muscular que você irá treinar hoje.</b></h2>';
 
         return $string;
     }
@@ -93,8 +128,8 @@
     function parte_seletor_musculo($musculo) {
 
         $string = '
-        <label for="'.$musculo.'">
-        <input type="checkbox" id="'.$musculo.'" name="muscles[]" value="'.$musculo.'">'.$musculo.'</label><br>';
+        <label for="'.$musculo.'" style="border: 2px #FFFFFF solid; background-color: #FFFFFF; border-radius: 10px; padding: 20px; color: #44bc62;font-size: 25px">
+        <input type="checkbox" id="'.$musculo.'" name="muscles[]" value="'.$musculo.'"><b>'.$musculo.'</b></label><br>';
 
         return $string;
 
@@ -119,8 +154,7 @@
 
 ?>
 
-
-<form action="lista_aparelhos.php" method="GET">
+<form action="lista_aparelhos.php" method="POST">
     <?php
         echo parte_inicial();
         echo parte_texto($nome);
@@ -132,7 +166,7 @@
         }
 
     ?>
-<input type="submit" value="Next">
+<input style="background-color: #FFFFFF; color: #44bc62; border-radius: 20px; font-size: 20px" type="submit" value="Next">
 </form>
 </body>
 </html>

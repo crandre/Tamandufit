@@ -19,14 +19,14 @@
 <!-- PARTE C -->
   <div class="container">    
     <div class="forms-container">
-      <div class="signin-signup">   
+      <div class="signin-signup" style="z-index: 100">   
 
         
         <!-- LOGIN FORM -->
         <form action="logar.php" method="POST" class="sign-in-form">
 
           <!-- TÍTULO DO APP NO INÍCIO -->
-          <h2 class="title">TECFIT</h2>
+          <img style="width:200px; height: 200px; border-radius: 50%; z-index: 100" src="logo.png"></img><br></br>
 
           <!-- INPUT DO EMAIL -->
           <div class="input-field">
@@ -74,7 +74,7 @@
 
 
 
-    <div class="panels-container">
+    <div class="panels-container" style="top: 55%">
       <div class="panel left-panel">  
         <div class="content">
           <h3>É novo aqui?</h3>

@@ -1,4 +1,3 @@
-<?php include 'config.php'; ?>
 
 <?php include 'CRUD/create.php'; ?>
 <?php include 'CRUD/read.php'; ?>
@@ -12,6 +11,7 @@
 <?php include 'FUNCOES/gerar_id.php'; ?>
 <?php include 'FUNCOES/gerar_token.php'; ?>
 <?php include 'FUNCOES/rastrear_token.php'; ?>
+<?php include 'FUNCOES/capturar_quantidade_disponivel.php'; ?>
 
 <?php include 'USER/login.php'; ?>
 <?php include 'USER/cadastro.php'; ?>

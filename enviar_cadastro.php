@@ -10,8 +10,12 @@
         echo "EMAIL JÁ CADASTRADO";
 
     } else {
+  
+    
 
-        header('Location: index.php');
+        echo "<script>location.href = '/index.php';</script>";
+
+
 
     }
 

@@ -10,12 +10,15 @@
     if ($token==0) {
         
         echo "SENHA ERRADA";
+        
 
     } else {
 
         $_SESSION["TOKEN"] = $token;
-    
-        header('Location: lista_musculos.php');
+
+        echo "<script>location.href = '/lista_musculos.php';</script>";
+
+
         
     }
     

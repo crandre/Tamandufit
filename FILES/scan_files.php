@@ -3,8 +3,8 @@
 
     function listar($tabela) {
 
-        $caminho = SITE_ROOT.'\database';
-        $caminho = $caminho.'\\'.$tabela;
+        $caminho = 'database';
+        $caminho = $caminho.'/'.$tabela;
 
         $files = scandir($caminho);
 
